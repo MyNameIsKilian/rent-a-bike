@@ -1,0 +1,10 @@
+<div class="card-bike">
+  <img src="https://picsum.photos/id/1/500/300" />
+  <div class="card-bike-infos">
+    <h1><%= @bike.user.last_name %>'s Bike</h1>
+    <p>Bike color : <%= @bike.color %></p>
+    <p>Bike size : <%= @bike.size %></p>
+    <p>Bike accessories : <%= @bike.accessories %></p>
+    <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 30%">
+  </div>
+</div>
