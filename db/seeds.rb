@@ -5,14 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "Creating users"
 
+
+puts "Creating users"
+User.destroy_all
 val = User.create!(last_name: "Banzet", first_name: "Valentina", phone_number: "0215765412", email: "val@gmail.com", password: "123456")
 soraya = User.create!(last_name: "Benberghout", first_name: "Soraya", phone_number: "0214765412", email: "soso@gmail.com", password: "123456")
 kiki = User.create!(last_name: "Alliot", first_name: "Kilian", phone_number: "0215746412", email: "kiki@gmail.com", password: "123456")
 
 puts "Creating bikes"
-
+Bike.destroy_all
 b1 = Bike.new(color: "red", size: "S", price: 15, user: val)
 b2 = Bike.new(color: "green", size: "M", price: 20, user: soraya)
 b3 = Bike.new(color: "white", size: "L", price: 25, user: kiki)
