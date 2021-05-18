@@ -1,0 +1,20 @@
+<div class = "bikes-container">
+  <% @bikes.each do |bike| %>
+    <div class="card-bike">
+      <img src= "https://static.lexpress.fr/medias_12300/w_2011,h_1509,c_crop,x_0,y_0/w_605,h_350,c_fill,g_north/v1616143962/velo-gravel_6298072.jpg" />
+      <div class="card-bike-infos">
+        <div>
+          <h1>Bike display list</h1>
+          
+            <p><%= bike.description %></p>  
+            <p>Size: <%= bike.size %></p>  
+            <p>Color: <%= bike.color %></p>
+            <p>Price: <%= bike.price %></p>
+        
+        </div>
+        <h2 class="card-bike-pricing">10.99€</h2>
+      </div>
+    </div>
+  <% end %>
+</div>
+
