@@ -20,9 +20,9 @@ Booking.destroy_all
 puts "Creating users"
 User.destroy_all
 
-val = User.create!(last_name: "Banzet", first_name: "Valentina", phone_number: "0215765412", email: "val@gmail.com", password: "123456")
-soraya = User.create!(last_name: "Benberghout", first_name: "Soraya", phone_number: "0214765412", email: "soso@gmail.com", password: "123456")
-kiki = User.create!(last_name: "Alliot", first_name: "Kilian", phone_number: "0215746412", email: "kiki@gmail.com", password: "123456")
+val = User.create!(last_name: "Banzet", first_name: "Valentina", phone_number: "0215765412", email: "val@gmail.com", password: "123456", description: "VTC vert pour adulte")
+soraya = User.create!(last_name: "Benberghout", first_name: "Soraya", phone_number: "0214765412", email: "soso@gmail.com", password: "123456", description: "Vélo de course bg")
+kiki = User.create!(last_name: "Alliot", first_name: "Kilian", phone_number: "0215746412", email: "kiki@gmail.com", password: "123456", description: "VTT trop stylé")
 
 puts "Creating bikes"
 Bike.destroy_all
