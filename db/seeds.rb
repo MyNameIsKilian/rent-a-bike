@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
+
+photob1 = URI.open('https://images.unsplash.com/photo-1569943228307-a66beab7cd96?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1019&q=80')
+photob2 = URI.open('https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80')
+photob3 = URI.open('https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1008&q=80')
+
+
+
 puts "Destroy bookings"
 Booking.destroy_all
 
@@ -26,6 +34,9 @@ b3 = Bike.new(color: "white", size: "L", price: 25, user: kiki, address: "cité 
 # val.bikes = b1
 # soraya.bikes = b2
 # kiki.bikes = b3
+b1.photos.attach(io: photob1, filename: 'photo bike', content_type: 'image/png')
+b2.photos.attach(io: photob2, filename: 'photo bike', content_type: 'image/png')
+b3.photos.attach(io: photob3, filename: 'photo bike', content_type: 'image/png')
 b1.save!
 b2.save!
 b3.save!
