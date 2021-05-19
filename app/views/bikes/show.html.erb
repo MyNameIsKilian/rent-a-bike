@@ -1,10 +1,14 @@
-<div class="card-bike">
-  <img src="https://picsum.photos/id/1/500/300" />
-  <div class="card-bike-infos">
-    <h1><%= @bike.user.last_name %>'s Bike</h1>
-    <p>Bike color : <%= @bike.color %></p>
-    <p>Bike size : <%= @bike.size %></p>
-    <p>Bike accessories : <%= @bike.accessories %></p>
-    <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 30%">
-  </div>
+
+<div class="bike-container ">
+   <img src= "https://static.lexpress.fr/medias_12300/w_2011,h_1509,c_crop,x_0,y_0/w_605,h_350,c_fill,g_north/v1616143962/velo-gravel_6298072.jpg" />
+
+    <div>
+      <h2><%= @bike.user.last_name %>'s Bike</h2>
+      <p>This are the bike's details :</p>
+      <p>Bike color : <%= @bike.color %></p>
+      <p>Bike size : <%= @bike.size %></p>
+      <p>Bike accessories : <%= @bike.accessories %></p>
+      <p>Bike price : <%= @bike.price %>€</p>
+    </div>
+    <%= link_to "Book", new_bike_booking_path(@bike), class: "btn btn-success mt-2"  %>
 </div>
