@@ -28,6 +28,7 @@ import "bootstrap";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 
 import { initMapbox } from '../plugins/init_mapbox';
+/* import { loadDynamicBannerText } from '../components/banner'; */
 
 
 // Internal imports, e.g:
@@ -39,4 +40,6 @@ document.addEventListener('turbolinks:load', () => {
 
   initUpdateNavbarOnScroll();
   initMapbox();
+  /* loadDynamicBannerText(); */
 });
+
