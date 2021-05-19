@@ -5,16 +5,21 @@
       <div class="card-bike-infos">
         <div>
           <h1>Bike display list</h1>
-          
-            <p><%= bike.description %></p>  
-            <p>Size: <%= bike.size %></p>  
+
+            <p><%= bike.description %></p>
+            <p>Size: <%= bike.size %></p>
             <p>Color: <%= bike.color %></p>
             <p>Price: <%= bike.price %></p>
-        
+
         </div>
         <h2 class="card-bike-pricing">10.99€</h2>
       </div>
     </div>
   <% end %>
+</div>
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
