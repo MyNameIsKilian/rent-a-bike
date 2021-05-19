@@ -1,13 +1,18 @@
 class BikesController < ApplicationController
-
   def index
     @bikes = Bike.all
+    @markers = @bikes.geocoded.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude
+      }
+    end
   end
-  
-   def show
+
+  def show
     @bike = Bike.find(params[:id])
   end
-  
+
   private
 
   def bike_params
