@@ -1,4 +1,7 @@
 <h1>My booking</h1>
+  <% @booking.bike.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height:300, width:400, crop: :fill %>
+  <% end %>
   <p>Bike size : <%= @booking.bike.size%></p>
   <p>Start date : <%= @booking.start_date%></p>
   <p>End date : <%= @booking.end_date%></p>
