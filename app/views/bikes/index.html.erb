@@ -10,7 +10,7 @@
             <p>Size: <%= bike.size %></p>  
             <p>Color: <%= bike.color %></p>
             <p>Price: <%= bike.price %></p>
-        
+            <%= link_to "Select it", bike_path(bike), class: "btn btn-gradient" %>
         </div>
         <h2 class="card-bike-pricing">10.99€</h2>
       </div>
