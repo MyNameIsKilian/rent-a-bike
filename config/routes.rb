@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     resources :bookings, except: :destroy
   end
 
-  # namespace :owner do
-  #   resources :bikes
-  #   resources :bookings, only: [:index, :update]
-  # end
+  namespace :owner do
+    resources :bikes
+    resources :bookings, only: [:index, :update]
+  end
 end
