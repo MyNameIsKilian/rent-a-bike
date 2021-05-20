@@ -1,5 +1,22 @@
 <h1>All my bookings</h1>
-
-<% @bookings.each do |booking| %>
-  <%= booking %>
-<% end %>
+<div class="main-container">
+  <div class="container-bookings">
+    <% @bookings.each do |booking| %>
+      <div class="card-booking">
+        <% booking.bike.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <div class="card-booking-infos">
+          <div>
+            <h1><%= booking.bike.description %></h1>
+            <p>Bike size : <%= booking.bike.size%></p>
+            <p>Start date : <%= booking.start_date%></p>
+            <p>End date : <%= booking.end_date%></p>
+            <%= link_to 'edit', edit_bike_booking_path(booking.bike, booking), class: 'btn btn-primary' %>
+          </div>
+          <h2 class="card-booking-pricing"><%= booking.bike.price %>€</h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
