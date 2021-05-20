@@ -50,6 +50,7 @@ display : flex;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  flex-direction: columns;
   position: relative;
 }
 
@@ -73,4 +74,17 @@ display : flex;
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+.map {
+width: 31%;
+height: 100vh;
+position: sticky !important;
+top: 0;
+}
+
+.cards {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
