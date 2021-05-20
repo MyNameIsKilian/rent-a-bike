@@ -1,7 +1,27 @@
-<h1>Réserver un vélo</h1>
+<div class = container>
+<h2>Book <%= @bike.user.last_name %>'s Bike</h2>
+<div>
+  <div class="bike-container mt-5 mr-5 mb-5">
+    <% @bike.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+    <% end %>
+    <div class="bike details ml-5">
+        <h2><%= @bike.description %></h2>
+        <p><strong>Color</strong> : <%= @bike.color %>
+        <strong class="ml-2">Size </strong>: <%= @bike.size %>
+        <strong class="ml-2">Address </strong>: <%= @bike.address%>
+        <strong class="ml-2">Price </strong>: <%= @bike.price %>€ per day</p>
+        <p><strong>Accessories </strong>: <%= @bike.accessories.nil? ? "No accessories" : @bike.accessories %></p>
+    </div>
+  </div>
 
-<%= simple_form_for [ @bike, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
+</div>
+
+
+<%= simple_form_for [ @bike, @booking], html: {class: 'new-bike-form'} do |f| %>
+  <%= f.input :start_date, wrapper_html: { class: 'form-size'} %>
+  <%= f.input :end_date, wrapper_html: { class: 'form-size'} %>
+  <%= f.button :submit, 'Book this bike', class: 'btn btn-success' %>
 <% end %>
+
+</div>

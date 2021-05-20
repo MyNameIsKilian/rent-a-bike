@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
-
+//import { initBookingPrice } from '../plugins/print_booking_price';
 import { initMapbox } from '../plugins/init_mapbox';
 /* import { loadDynamicBannerText } from '../components/banner'; */
 
@@ -40,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
 
   initUpdateNavbarOnScroll();
   initMapbox();
+  //initBookingPrice();
   /* loadDynamicBannerText(); */
 });
 
