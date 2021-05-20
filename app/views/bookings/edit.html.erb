@@ -1,1 +1,9 @@
- <h1>Edit booking</h1>
+ <div class = "booking-edit">
+   <h1>Edit booking</h1>
+ </div>
+   <%= simple_form_for [ @bike, @booking], html: {class: 'new-bike-form'} do |f| %>
+    <%= f.input :start_date, label: "New start date", wrapper_html: { class: 'form-size'} %>
+    <%= f.input :end_date, label: "New end date ", wrapper_html: { class: 'form-size'} %>
+    <%= f.button :submit, 'Validate new dates', class: 'btn btn-success' %>
+  <% end %>
+
