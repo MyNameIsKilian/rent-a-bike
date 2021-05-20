@@ -21,7 +21,7 @@ class Owner::BikesController < ApplicationController
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save
-      redirect_to owner_bikes_path
+      redirect_to owner_bike_path(@bike)
     else
       render :new
     end
@@ -32,7 +32,7 @@ class Owner::BikesController < ApplicationController
 
   def update
     @bike.update(bike_params)
-    redirect_to owner_bikes_path
+    redirect_to owner_bike_path(@bike)
   end
 
   def destroy
@@ -46,6 +46,6 @@ class Owner::BikesController < ApplicationController
   end
 
   def bike_params
-    params.require(:bike).permit(:description, :size, :color, :price, :accessories)
+    params.require(:bike).permit(:description, :size, :color, :price, :accessories, photos: [])
   end
 end
