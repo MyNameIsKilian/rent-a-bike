@@ -1,12 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-rent-a-bike">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoz9ZyXEKr85vPh20RaHLNOlTcDj8Aj6TGd2w-FDdRLlKF4SQYVGSsMnJsNIv1LvX6MGo&usqp=CAU" %>
+    <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Bicycle_with_Rider.svg/225px-Bicycle_with_Rider.svg.png" %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -15,16 +14,16 @@
           <%= link_to "Welcome Biker!", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Account", "#", class: "nav-link" %>
+          <li class="nav-item dropdown">
+            <div id="navbarDropdown" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup=true aria-expanded=false >My Account</div>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
         </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRdcWXvHCgo3L-0lPHXQyeg5Rl5GnKni1EvAalbQyLXrruaDpO1C_Z2O7uUyExA", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
+      <%= image_tag "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRdcWXvHCgo3L-0lPHXQyeg5Rl5GnKni1EvAalbQyLXrruaDpO1C_Z2O7uUyExA", class: "avatar dropdown-toggle", id: "navbarDropdown" %>
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
