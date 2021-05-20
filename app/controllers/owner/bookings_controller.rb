@@ -1,8 +1,8 @@
 class Owner::BookingsController < ApplicationController
-  before_action :find_booking, only: [:show, :update]
+  before_action :find_booking, only: :update
 
   def index
-    @bookings = Booking.all.map do |booking|
+    @bookings = Booking.all.select do |booking|
       booking.bike.user == current_user
     end
   end

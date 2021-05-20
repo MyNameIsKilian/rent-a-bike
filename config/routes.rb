@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   namespace :owner do
     resources :bikes
-    resources :bookings, only: [:index, :update, :show]
+    resources :bookings, only: [:index, :update]
   end
 end
