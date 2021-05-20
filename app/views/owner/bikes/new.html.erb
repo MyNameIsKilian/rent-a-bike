@@ -1,1 +1,12 @@
 <h1>Create a bike</h1>
+
+<%= simple_form_for [:owner, @bike] do |f| %>
+  <%= f.input :description %>
+  <%= f.input :color %>
+  <%= f.input :size %>
+  <%= f.input :accessories %>
+  <%= f.input :price %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit %>
+<% end %>
+
