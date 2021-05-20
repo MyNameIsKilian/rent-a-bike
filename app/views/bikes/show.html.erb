@@ -1,16 +1,22 @@
 
-<div class="bike-container ">
-  <% @bike.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-    <div>
-      <h2><%= @bike.user.last_name %>'s Bike</h2>
-      <p>This are the bike's details : <%= @bike.description %></p>
-      <p>Color : <%= @bike.color %></p>
-      <p>Size : <%= @bike.size %></p>
-      <p>Accessories : <%= @bike.accessories %></p>
-      <p>Price : <%= @bike.price %>€ a day</p>
+<div>
+  <div class="bike-container mt-5 ml-5 mr-5">
+    <% @bike.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <div class="bike details ml-5">
+        <h2><%= @bike.user.last_name %>'s Bike</h2>
+        <p><%= @bike.description %></p>
+        <p><strong>Color</strong> : <%= @bike.color %></p>
+        <p><strong>Size </strong>: <%= @bike.size %></p>
+        <p><strong>Accessories </strong>: <%= @bike.accessories %> </p>
+        <p><strong>Address </strong>: <%= @bike.address %></p>
+        <p><strong>Price </strong>: <%= @bike.price %>€ per day</p>
+      <div class = "bike-button">
+        <%= link_to "Book", new_bike_booking_path(@bike), class: "btn btn-success mt-2 mr-3"  %>
+        <%= link_to "See all bikes", bikes_path, class: "btn btn-outline-secondary mt-2 mr-3" %>
+      </div>
     </div>
-    <%= link_to "Book", new_bike_booking_path(@bike), class: "btn btn-success mt-2"  %>
-    <%= link_to "All bikes", bikes_path, class: "btn btn-primary mt-2" %>
+  </div>
+
 </div>
