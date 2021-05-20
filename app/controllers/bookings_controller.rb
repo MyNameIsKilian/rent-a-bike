@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :find_bike, only: [:new, :index, :create]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
   def new
@@ -25,11 +25,19 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @bike = Bike.find(params[:bike_id])
+    @booking = Booking.find(params[:id])
   end
 
   def update
+    @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    @bike =  Bike.find(params[:bike_id])
+    if @booking.save
+      redirect_to bike_booking_path(@bike, @booking)
+    else
+      render :edit
+    end
   end
 
   private

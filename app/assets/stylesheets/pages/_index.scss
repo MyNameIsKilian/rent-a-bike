@@ -2,7 +2,12 @@
 @import "home";
 @import "bike_show";
 @import "bike_new";
+
 @import "booking_index";
+
+@import "booking_show";
+@import "booking_edit";
+
 
 .bikes-container {
 display : flex;
