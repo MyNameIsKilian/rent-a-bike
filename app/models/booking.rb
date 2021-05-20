@@ -3,4 +3,5 @@ class Booking < ApplicationRecord
   belongs_to :bike
   validates :start_date, presence: true
   validates :end_date, presence: true
+  # validates :statut, presence: true
 end

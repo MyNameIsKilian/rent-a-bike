@@ -1,0 +1,8 @@
+<h1>All my bookings</h1>
+
+<% @bookings.each do |booking| %>
+  <h2>Réservation du <%= booking.start_date %>au <%= booking.end_date %></h2>
+  <p>Pour <%= booking.user.first_name %></p>
+  <%= link_to 'Accept', owner_bookings_path, class: 'btn btn-success'%>
+  <%= link_to 'Refuse', owner_bookings_path, class: 'btn btn-danger' %>
+<% end %>
