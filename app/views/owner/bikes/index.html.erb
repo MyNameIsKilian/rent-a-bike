@@ -1,1 +1,20 @@
-<h1>All my bikes</h1>
+<h1 class="ml-3 mt-3">All my bikes</h1>
+<%= link_to "Add a new bike", new_owner_bike_path, class: "btn btn-success my-4 ml-3 py-2 px-4" %>
+<div class = "bikes-container">
+  <% @bikes.each do |bike| %>
+    <div class="card-bike">
+      <% bike.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      <div class="card-bike-infos">
+        <div>
+          <h1><%= bike.description %></h1>
+            <p>Size: <%= bike.size %></p>
+            <p>Color: <%= bike.color %></p>
+            <%= link_to "My bike details", owner_bike_path(bike), class: "btn btn-gradient mt-3" %>
+        </div>
+        <h2 class="card-bike-pricing"><%= bike.price %>€</h2>
+      </div>
+    </div>
+  <% end %>
+</div>
