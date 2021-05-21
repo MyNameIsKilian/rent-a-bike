@@ -1,0 +1,8 @@
+<h5><%= bike.description %></h5>
+<% bike.photos.each do |photo| %>
+<%= cl_image_tag photo.key, height: 100, width: 150, crop: :fill %>
+<% end %>
+<p>Size: <%= bike.size %></p>
+<p>Color: <%= bike.color %></p>
+<p><%= bike.price %>€</p>
+
