@@ -1,13 +1,13 @@
 class Owner::BikesController < ApplicationController
   before_action :find_bike, only: [:show, :edit, :update, :destroy]
   def index
-    @bikes = Bike.all
-    @markers = @bikes.geocoded.map do |bike|
-      {
-        lat: bike.latitude,
-        lng: bike.longitude
-      }
-    end
+    @bikes = Bike.where(user: current_user)
+    # @markers = @bikes.geocoded.map do |bike|
+    #   {
+    #     lat: bike.latitude,
+    #     lng: bike.longitude
+    #   }
+    # end
   end
 
   def show
@@ -37,6 +37,7 @@ class Owner::BikesController < ApplicationController
 
   def destroy
     @bike.destroy
+    redirect_to owner_bikes_path
   end
 
   private
