@@ -1,6 +1,6 @@
 <h1>All my bookings</h1>
-<div class="main-container">
-  <div class="container-bookings">
+<div class="container">
+  <div class="main-container-bookings">
     <% @bookings.each do |booking| %>
       <div class="card-booking">
         <% booking.bike.photos.each do |photo| %>
@@ -20,3 +20,4 @@
     <% end %>
   </div>
 </div>
+

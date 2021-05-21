@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_bike, only: [:new, :index, :create]
+  before_action :find_bike, only: [:new, :create]
 
   def index
     @bookings = Booking.where(user: current_user)
@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    @bike =  Bike.find(params[:bike_id])
+    @bike = Bike.find(params[:bike_id])
     if @booking.save
       redirect_to bike_booking_path(@bike, @booking)
     else
