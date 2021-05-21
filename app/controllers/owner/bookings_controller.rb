@@ -1,5 +1,5 @@
 class Owner::BookingsController < ApplicationController
-  before_action :find_booking, only: :update
+  before_action :find_booking, only: [:update, :accept, :refuse]
 
   def index
     @bookings = Booking.all.select do |booking|
@@ -31,6 +31,16 @@ class Owner::BookingsController < ApplicationController
   def update
     @booking.update(booking_params)
     redirect_to booking_path(@booking)
+  end
+
+  def accept
+    @booking.accepted!
+    redirect_to owner_bookings_path
+  end
+
+  def refuse
+    @booking.refused!
+    redirect_to owner_bookings_path
   end
 
   private

@@ -9,7 +9,7 @@
         <h5><%= @bike.description %></h5>
         <p><strong>Color</strong> : <%= @bike.color %></p>
         <p><strong>Size </strong>: <%= @bike.size %></p>
-        <p><strong>Accessories </strong>: <%= @bike.accessories.nil? ? "No accessories" : @bike.accessories %></p>
+        <p><strong>Accessories </strong>: <%= @bike.accessories == "" ? "No accessories" : @bike.accessories %></p>
         <p><strong>Address </strong>: <%= @bike.address %></p>
         <p><strong>Price </strong>: <%= @bike.price %>€ per day</p>
       <div class = "bike-button">
