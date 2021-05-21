@@ -53,6 +53,7 @@ display : flex;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  flex-direction: columns;
   position: relative;
 }
 
@@ -78,5 +79,15 @@ display : flex;
   color: white;
 }
 
+.map {
+width: 30%;
+height: 100vh;
+position: sticky !important;
+top: 0;
+}
 
- 
+.cards {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
