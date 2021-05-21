@@ -8,6 +8,10 @@
 @import "booking_show";
 @import "booking_edit";
 
+body {
+  min-height: calc(100vh - 50px);
+  position: relative;
+}
 
 .bikes-container {
 display : flex;
@@ -20,6 +24,7 @@ display : flex;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 400px;
   margin: 16px ;
+  border-radius: 7px;
 }
 
 .card-bike > img {
@@ -95,3 +100,4 @@ top: 0;
 #h1-left {
   text-align: left;
 }
+
