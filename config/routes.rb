@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   namespace :owner do
     resources :bikes
-    resources :bookings, only: [:index, :update]
+    resources :bookings, only: [:index, :update] do
+      member do
+        post 'accept'
+        post 'refuse'
+      end
+    end
   end
 end
