@@ -77,14 +77,14 @@ display : flex;
 }
 
 .map {
-width: 31%;
+width: 30%;
 height: 100vh;
 position: sticky !important;
 top: 0;
 }
 
 .cards {
-  width: 80%;
+  width: 70%;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
