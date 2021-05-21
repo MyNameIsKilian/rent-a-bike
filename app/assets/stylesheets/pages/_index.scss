@@ -8,6 +8,10 @@
 @import "booking_show";
 @import "booking_edit";
 
+body {
+  min-height: calc(100vh - 50px);
+  position: relative;
+}
 
 .bikes-container {
 display : flex;
@@ -20,6 +24,7 @@ display : flex;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 400px;
   margin: 16px ;
+  border-radius: 7px;
 }
 
 .card-bike > img {
@@ -77,18 +82,5 @@ display : flex;
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
-}
-
-.map {
-width: 30%;
-height: 100vh;
-position: sticky !important;
-top: 0;
-}
-
-.cards {
-  width: 70%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
