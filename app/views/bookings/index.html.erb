@@ -10,8 +10,8 @@
           <div>
             <h1><%= booking.bike.description %></h1>
             <p>Bike size : <%= booking.bike.size%></p>
-            <p>Start date : <%= booking.start_date%></p>
-            <p>End date : <%= booking.end_date%></p>
+            <% booking.start_date.month >= 10 ? zero = "" : zero = "0"%>
+            <p>Réservation du <%= booking.start_date.day %>/<%= zero %><%= booking.start_date.month %> au <%= booking.end_date.day %>/<%= zero %><%= booking.end_date.month%></p>
             <%= link_to 'edit', edit_bike_booking_path(booking.bike, booking), class: 'btn btn-primary' %>
           </div>
           <h2 class="card-booking-pricing"><%= booking.bike.price %>€</h2>
