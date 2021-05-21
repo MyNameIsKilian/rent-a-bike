@@ -1,15 +1,15 @@
 <div class = "booking-show">
-    <h1>My booking</h1>
+    <h1 class="mt-4">My booking</h1>
     <div class = "booking-show-pic mb-3">
       <% @booking.bike.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height:300, width:400, crop: :fill %>
       <% end %>
     </div>
-        <h5><%= @booking.bike.description %></h5>
-        <p><strong>Price </strong>: <%= @booking.bike.price %>€ per day</p>
-      <p>Start date : <%= @booking.start_date%></p>
-      <p>End date : <%= @booking.end_date%></p>
-      <%= link_to 'All my bookings', bookings_path, class: 'btn btn-primary mb-3' %>
+      <h5><%= @booking.bike.description %></h5>
+      <h6><strong>Booking status :</strong> <%= @booking.status %></h6>
+      <p><strong>Price </strong>: <%= @booking.bike.price %>€ per day</p>
+      <% @booking.start_date.month >= 10 ? zero = "" : zero = "0"%>
+      <p>Réservation du <%= @booking.start_date.day %>/<%= zero %><%= @booking.start_date.month %> au <%= @booking.end_date.day %>/<%= zero %><%= @booking.end_date.month%></p>      <%= link_to 'All my bookings', bookings_path, class: 'btn btn-primary mb-3' %>
     <%= link_to "Edit date booking", edit_bike_booking_path, class: "btn btn-outline-secondary" %>
 </div>
 
