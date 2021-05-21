@@ -1,5 +1,5 @@
 <h1 class="mx-4">All my booking requests</h1>
-
+<%= link_to "Back", owner_bikes_path, class: "btn btn-secondary mt-3 ml-4 px-5" %>
 <% @bookings.each do |booking| %>
   <div class="my-4 mx-4">
     <% booking.start_date.month >= 10 ? zero = "" : zero = "0"%>
