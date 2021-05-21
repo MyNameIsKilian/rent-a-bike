@@ -22,6 +22,7 @@ text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 400px;
   margin: 16px ;
+  justify-self: center;
 }
 
 .card-booking > img {
@@ -78,4 +79,12 @@ text-align: center;
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+.main-container-bookings {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: columns;
+  position: relative;
 }

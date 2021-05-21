@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_bike, only: [:new, :index, :create]
+  before_action :find_bike, only: [:new, :create]
 
   def index
     @bookings = Booking.where(user: current_user)
