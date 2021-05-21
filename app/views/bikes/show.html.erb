@@ -5,7 +5,7 @@
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
     <div class="bike details ml-5">
-        <h2><%= @bike.user.last_name %>'s Bike</h2>
+        <h2><%= @bike.user.first_name %>'s Bike</h2>
         <h5><%= @bike.description %></h5>
         <p><strong>Color</strong> : <%= @bike.color %></p>
         <p><strong>Size </strong>: <%= @bike.size %></p>
